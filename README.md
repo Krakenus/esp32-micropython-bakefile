@@ -9,7 +9,7 @@ Just write you code and let the bake to do the rest.
 
 1. Clone this repo
 2. Create Python virtualenv the way you prefer (optional)
-3. install picocom (optional for `bake repl` command)
+3. install picocom (optional for REPL)
 4. `pip install -r requirements.txt`
 5. `cp .ampy.example .ampy`
 6. adjust port and baudrate in `.ampy` if you need
@@ -23,8 +23,6 @@ Just write you code and let the bake to do the rest.
 `bake flash_clear` clears whole flash memory of ESP32
 
 `bake flash_python` executes `bake flash_clear` and uploads micropython interpreter from given binary (downloadable from https://micropython.org/download/esp32/)
-
-`bake repl` connects to esp32's micropython prompt via serial port (requires picocom)
 
 `bake clean` removes the `out/` folder with all minified python sources and hex files
 

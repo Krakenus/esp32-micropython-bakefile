@@ -35,8 +35,5 @@ flash_python: flash_clear
         esptool.py --chip esp32 --baud $AMPY_BAUD --port $AMPY_PORT write_flash -z 0x1000 $1
     fi
 
-repl:
-    picocom $AMPY_PORT -b $AMPY_BAUD
-
 clean:
     rm -rf $OUTPUT_DIR

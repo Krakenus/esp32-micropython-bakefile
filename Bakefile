@@ -1,0 +1,42 @@
+source .ampy
+OUTPUT_DIR=out
+
+minify:
+    if [ ! -d $OUTPUT_DIR ]; then
+        mkdir $OUTPUT_DIR
+        echo "$OUTPUT_DIR dir created"
+    fi
+    pyminifier -o "${OUTPUT_DIR}/$1" $1
+
+upload:
+    if [ ! -e $AMPY_PORT ]; then
+        echo "$AMPY_PORT not exists. ESP32 device is probably not connected"
+    else
+        for file in "$@"; do
+            echo "uploading $file"
+            bake minify $file
+            base_name="$(basename $file)"
+            ampy put "$OUTPUT_DIR/$base_name"
+            ampy reset
+        done
+    fi
+
+flash_clear:
+    if [ ! -e $AMPY_PORT ]; then
+        echo "$AMPY_PORT not exists. ESP32 device is probably not connected"
+    else
+        esptool.py --baud $AMPY_BAUD --port $AMPY_PORT erase_flash
+    fi
+
+flash_python: flash_clear
+    if [ ! -e $AMPY_PORT ]; then
+        echo "$AMPY_PORT not exists. ESP32 device is probably not connected"
+    else
+        esptool.py --chip esp32 --baud $AMPY_BAUD --port $AMPY_PORT write_flash -z 0x1000 $1
+    fi
+
+repl:
+    picocom $AMPY_PORT -b $AMPY_BAUD
+
+clean:
+    rm -rf $OUTPUT_DIR

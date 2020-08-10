@@ -1,0 +1,16 @@
+adafruit-ampy==1.0.7
+bake-cli==0.12.0
+click==7.1.2
+colorama==0.4.3
+decorator==4.4.2
+delegator.py==0.1.1
+ecdsa==0.15
+esptool==2.8
+networkx==2.4
+pexpect==4.8.0
+ptyprocess==0.6.0
+pyaes==1.6.1
+Pygments==2.6.1
+pyserial==3.4
+python-dotenv==0.14.0
+six==1.15.0

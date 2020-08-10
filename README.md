@@ -20,9 +20,9 @@ Just write you code and let the bake to do the rest.
 
 `bake upload <file> [<file> [<file> ...]]` minifies and upload given Python files to ESP32's micropython filesystem
 
-`bake flash_clean` clears whole flash memory of ESP32
+`bake flash_clear` clears whole flash memory of ESP32
 
-`bake flash_python` uploads micropython interpreter from given binary (downloadable from https://micropython.org/download/esp32/)
+`bake flash_python` executes `bake flash_clear` and uploads micropython interpreter from given binary (downloadable from https://micropython.org/download/esp32/)
 
 `bake repl` connects to esp32's micropython prompt via serial port (requires picocom)
 

@@ -11,6 +11,7 @@ pexpect==4.8.0
 ptyprocess==0.6.0
 pyaes==1.6.1
 Pygments==2.6.1
+pyminifier==2.1
 pyserial==3.4
 python-dotenv==0.14.0
 six==1.15.0

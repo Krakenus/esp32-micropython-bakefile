@@ -1,15 +1,15 @@
 # ESP32 MicroPython Bakefile
 
-Bakefile with scripts to make ESP32 MicroPython development more effective. No special IDE or editor is needed. 
+This Bakefile provides scripts that making ESP32 MicroPython development more effective for small project. No special IDE or editor is needed. 
 Only Bash and Python 3. 
 
-Just write you code and let the bake to do the rest. 
+For more advanced work with micropython boards I recommend to combine usage of this Bakefile with awesome tool called [rshell](https://github.com/dhylands/rshell).
 
 ## Installation
 
 1. Clone this repo
 2. Create Python virtualenv the way you prefer (optional)
-3. install picocom (optional for REPL)
+3. install [rshell](https://github.com/dhylands/rshell) (optional but strongly recommended)
 4. `pip install -r requirements.txt`
 5. `cp .ampy.example .ampy`
 6. adjust port and baudrate in `.ampy` if you need
